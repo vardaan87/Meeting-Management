@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meeting Management</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="page-header">
+        <p class="eyebrow">PLAN · CONNECT · COLLABORATE</p>
+        <h1>Meeting Management</h1>
+        <p class="subtitle">
+          Choose a time that works for you and book your meeting.
+        </p>
+      </header>
+
+      <section class="booking-layout" aria-label="Book a meeting">
+        <div class="slots-panel">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">AVAILABILITY</p>
+              <h2>Choose a time</h2>
+            </div>
+            <span class="live-indicator">Live slots</span>
+          </div>
+          <div id="slots-container" class="slots-grid">
+            <p class="muted">Loading available slots…</p>
+          </div>
+        </div>
+
+        <form id="booking-form" class="booking-form">
+          <div class="form-heading">
+            <p class="eyebrow">YOUR DETAILS</p>
+            <h2>Book your meeting</h2>
+          </div>
+          <label for="name">Name</label>
+          <input
+            id="name"
+            name="name"
+            type="text"
+            placeholder="Enter your name"
+            maxlength="100"
+            required
+          />
+          <label for="email">Email</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="you@example.com"
+            maxlength="150"
+            required
+          />
+          <div class="selected-slot-row">
+            <span>Selected time</span>
+            <strong id="selected-slot">No slot selected</strong>
+          </div>
+          <button
+            id="book-button"
+            class="primary-button"
+            type="submit"
+            disabled
+          >
+            Book meeting
+          </button>
+          <p id="form-message" class="form-message" role="status"></p>
+        </form>
+      </section>
+
+      <section class="meetings-section">
+        <div class="section-heading meetings-heading">
+          <div>
+            <p class="eyebrow">YOUR BOOKINGS</p>
+            <h2>Scheduled meetings</h2>
+          </div>
+          <span id="meeting-count" class="count-pill">0 meetings</span>
+        </div>
+        <div id="meetings-container" class="meetings-grid">
+          <div class="empty-state">
+            <span class="empty-icon">▦</span>
+            <h3>No meetings yet</h3>
+            <p>Your confirmed meetings will appear here.</p>
+          </div>
+        </div>
+      </section>
+      <footer>Meeting Management · Demo project</footer>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./script.js" defer></script>
+  </body>
+</html>
